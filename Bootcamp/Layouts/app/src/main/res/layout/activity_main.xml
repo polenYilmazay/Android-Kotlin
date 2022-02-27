@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/costOfServiceEditText"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:hint="Cost Of Service"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/satisfactionQuestionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Are you satisfied with the service?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/costOfServiceEditText" />
+
+    <RadioGroup
+        android:id="@+id/tipOptionsRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:checkedButton="@id/twentyPercentRadioButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/satisfactionQuestionTextView">
+
+        <RadioButton
+            android:id="@+id/twentyPercentRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#FBC02D"
+            android:text="Perfect (%20)" />
+
+        <RadioButton
+            android:id="@+id/eighteenPercentRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#EF39A7"
+            android:text="Good (%18)" />
+
+        <RadioButton
+            android:id="@+id/fifteenPercentRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Bad (%15)" />
+
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/rollUpTheTipSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Should the tip be rounded to the top number?"
+        app:layout_constraintTop_toBottomOf="@+id/tipOptionsRadioGroup" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="CALCULATE"
+        app:layout_constraintTop_toBottomOf="@+id/rollUpTheTipSwitch"/>
+
+    <TextView
+        android:id="@+id/theAmountOfTheTipTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="The Amount Of The Tip: 20 $"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

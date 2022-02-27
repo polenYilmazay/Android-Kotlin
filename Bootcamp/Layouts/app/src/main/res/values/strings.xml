@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Layouts</string>
+    
+    <string name="theCostOfService">The Cost Of Service</string>
+    
+    <string name="theAmountOfTheTip">The Amount Of The Tip: %s</string>
+</resources>
